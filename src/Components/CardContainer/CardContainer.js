@@ -17,6 +17,11 @@ const CardContainer = ({ plantList }) => {
       )
     })
   }
+  return (
+    <section className='card-container'>
+    {plantCards}
+    </section>
+  )
 }
 
 export default CardContainer;
