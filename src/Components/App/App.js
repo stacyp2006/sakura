@@ -6,8 +6,14 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-
+      plants: []
     }
+  }
+
+  componentDidMount() {
+    getPlants()
+    .then(data => this.setState({plants: data}))
+    .catch(error => console.log('fetch error'))
   }
 
   render() {
