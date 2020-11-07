@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 // import CardContainer from '../CardContainer/CardContainer';
+import { getPlants } from '../../apiCalls.js';
 import './App.css';
 
 class App extends Component {
@@ -12,7 +13,7 @@ class App extends Component {
 
   componentDidMount() {
     getPlants()
-    .then(data => this.setState({plants: data}))
+    .then(data => this.setState({plants: data.data}))
     .catch(error => console.log('fetch error'))
   }
 
