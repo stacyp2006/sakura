@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import CardContainer from '../CardContainer/CardContainer';
+import CardDetail from '../CardDetail/CardDetail';
 import { Route, Link, withRouter } from 'react-router-dom';
 import { getPlants } from '../../apiCalls.js';
 import './App.css';
