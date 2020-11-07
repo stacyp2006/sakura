@@ -1,16 +1,14 @@
-import React from 'react';
+import React, { Component } from 'react';
+import CardContainer from './CardContainer/CardContainer';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          Sakura
-        </p>
-      </header>
-    </div>
-  );
+class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+      
+    }
+  }
 }
 
 export default App;
