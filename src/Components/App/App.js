@@ -20,7 +20,7 @@ class App extends Component {
   render() {
     return (
       <main>
-        <h1>Sakura</h1>
+        <h1 className='title'>Sakura</h1>
         <CardContainer plantList={this.state.plants}/>
       </main>
     )
