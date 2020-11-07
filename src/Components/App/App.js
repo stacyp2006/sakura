@@ -28,7 +28,7 @@ class App extends Component {
           render={({ match }) =>{
             const { id } = match.params;
             const plantToRender = this.state.plants.find(plant => plant.id === parseInt(id));
-            return <CardDetail />
+            return <CardDetail {...plantToRender}/>
           }}
         />
       </main>
