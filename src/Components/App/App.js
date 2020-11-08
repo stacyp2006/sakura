@@ -29,7 +29,7 @@ class App extends Component {
       <main>
         <nav className='links'>
           <h1 className='title'>Sakura</h1>
-          <Link to='/' className='homelink'>Home</Link> || <Link to='/plan' className='planlink'>My Garden Plan</Link>
+          <Link to='/' className='homelink'>Home</Link> {' '} <Link to='/plan' className='planlink'>My Garden Plan</Link>
         </nav>
         <Route exact path='/' render={() => <CardContainer plantList={this.state.plants}/>} />
         <Route path='/plant/:id'
