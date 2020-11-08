@@ -18,6 +18,8 @@ class CardDetail extends Component {
     .catch(error => console.log('single plant fetch error'))
   }
 
+//add onClick method for button
+
   render() {
     return (
       <main className='plant-detail'>

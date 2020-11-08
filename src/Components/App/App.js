@@ -9,11 +9,16 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      plants: []
+      plants: [],
+      plan: []
     }
   }
 
-  componentDidMount() {
+  addToPlan = () => {
+    // this.setState({plan: ...state, plant})
+  }
+
+  componentDidMount = () => {
     getPlants()
     .then(data => this.setState({plants: data.data}))
     .catch(error => console.log('fetch error'))
