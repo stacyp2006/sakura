@@ -19,6 +19,10 @@ class App extends Component {
     // this.setState({plan: ...state, plant})
   }
 
+  removeFromPlan = () =>{
+    
+  }
+
   componentDidMount = () => {
     getPlants()
     .then(data => this.setState({plants: data.data}))
