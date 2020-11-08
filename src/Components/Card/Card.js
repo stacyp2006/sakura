@@ -11,6 +11,13 @@ class Card extends Component {
     }
   }
 
+  addPlant = (event) => {
+    this.setState({onPlan: true})
+  }
+
+  removePlant = (event) => {
+    this.setState({onPlan: false})
+  }
   render() {
     return (
       <div id={this.props.id} className='plant-card'>
@@ -21,16 +28,13 @@ class Card extends Component {
             <h2 className='scientific-name'>{this.props.scientificName}</h2>
           </Link>
         </nav>
-        {!this.state.onPlan && <button className='add-button' type='button'>Add to Garden Plan</button>}
-        {this.state.onPlan && <button className='remove-button' type='button'>Remove from Garden Plan</button>}
+        {!this.state.onPlan && <button className='add-button' type='button' onClick={this.addPlant}>Add to Garden Plan</button>}
+        {this.state.onPlan && <button className='remove-button' type='button' onClick={this.removePlant}>Remove from Garden Plan</button>}
       </div>
     )
   }
 }
 
-//Add buttons when ready for the functionality
-//button: Add to Garden plan, onPlan=false
-//button: Remove from Garden plan, onPlan=true
 //input/button: Quantity to Plant, onPlan=true
 
 export default Card;
