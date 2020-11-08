@@ -36,10 +36,13 @@ class CardDetail extends Component {
           Learn More
           </a>
           <button className='add-button' type='button'>Add to Garden Plan</button>
+          <button className='remove-button' type='button'>Remove from Garden Plan</button>
         </section>
         <img className='photo' src={this.props.image_url} alt= {this.props.common_name}/>
       </main>
     )
   }
 }
+
+//Conditionally render both buttons
 export default CardDetail;
