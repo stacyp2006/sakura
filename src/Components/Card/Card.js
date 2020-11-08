@@ -11,13 +11,16 @@ class Card extends Component {
     }
   }
 
-  addPlant = (event) => {
-    this.setState({onPlan: true})
+  addPlant = async (event) => {
+    await this.setState({onPlan: true})
+    let newPlant = {...this.state, ...this.props}
+    this.props.addToPlan(newPlant)
   }
 
   removePlant = (event) => {
     this.setState({onPlan: false})
   }
+
   render() {
     return (
       <div id={this.props.id} className='plant-card'>
@@ -34,7 +37,5 @@ class Card extends Component {
     )
   }
 }
-
-//input/button: Quantity to Plant, onPlan=true
 
 export default Card;
