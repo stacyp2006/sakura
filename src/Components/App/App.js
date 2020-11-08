@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import CardContainer from '../CardContainer/CardContainer';
 import CardDetail from '../CardDetail/CardDetail';
+import Plan from '../Plan/Plan';
 import { Route, Link, withRouter } from 'react-router-dom';
 import { getPlants } from '../../apiCalls.js';
 import './App.css';
@@ -39,6 +40,7 @@ class App extends Component {
             return <CardDetail {...plantToRender}/>
           }}
         />
+        <Route path='/plan' render={() => <Plan plan={this.state.plan}/>}/>
       </main>
     )
   }
