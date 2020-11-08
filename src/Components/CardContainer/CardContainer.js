@@ -22,6 +22,6 @@ const CardContainer = ({ plantList }) => {
     {plantCards}
     </section>
   )
-}
+} 
 
 export default CardContainer;

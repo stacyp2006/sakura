@@ -8,3 +8,13 @@ export const getPlants = () => {
   })
   .then(response => response.json())
 }
+
+export const getSinglePlant = async (plantID) => {
+  const response = await fetch('https://fe-cors-proxy.herokuapp.com', {
+    headers: {
+      "Target-URL": `https://trefle.io/api/v1/species/${plantID}?token=${API_KEY}`
+    }
+  })
+  const data = await response.json()
+  return data
+}
