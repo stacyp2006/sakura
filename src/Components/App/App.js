@@ -43,7 +43,6 @@ class App extends Component {
         </nav>
         <Route exact path='/'
           render={() => <CardContainer plantList={this.state.plants}
-          addToPlan={this.addToPlan}
           />}
         />
         <Route path='/plant/:id'

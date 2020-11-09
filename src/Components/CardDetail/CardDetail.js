@@ -60,5 +60,4 @@ class CardDetail extends Component {
   }
 }
 
-//Conditionally render both buttons
 export default CardDetail;

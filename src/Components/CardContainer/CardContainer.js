@@ -2,7 +2,7 @@ import React from 'react';
 import Card from '../Card/Card';
 import './CardContainer.css';
 
-const CardContainer = ({ plantList, addToPlan, removeFromPlan }) => {
+const CardContainer = ({ plantList, removeFromPlan }) => {
   let plantCards;
   if(plantList.length !== 0) {
     plantCards = plantList.map((plant, index) => {
@@ -13,7 +13,6 @@ const CardContainer = ({ plantList, addToPlan, removeFromPlan }) => {
           commonName={plant.common_name}
           scientificName={plant.scientific_name}
           image={plant.image_url}
-          addToPlan={addToPlan}
         />
       )
     })
