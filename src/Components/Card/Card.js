@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import './Card.css';
 
 const Card = (props) => {
@@ -25,3 +26,11 @@ const Card = (props) => {
 
 
 export default Card;
+
+Card.propTypes = {
+  id: PropTypes.number,
+  commonName: PropTypes.string,
+  image: PropTypes.string,
+  scientificName: PropTypes.string,
+  onPlan: PropTypes.bool
+}
