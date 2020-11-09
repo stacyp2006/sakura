@@ -13,8 +13,8 @@ class CardDetail extends Component {
     }
   }
 
-  componentDidMount = () => {
-    getSinglePlant(this.props.id)
+  componentDidMount = async () => {
+    await getSinglePlant(this.props.id)
     .then(data => this.setState({plantType: data.data.specifications, plantInfo: data.data.sources[0], height: data.data.specifications.average_height}))
     .catch(error => console.log('single plant fetch error'))
   }
