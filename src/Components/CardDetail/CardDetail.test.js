@@ -100,7 +100,3 @@ describe('CardDetail', () => {
     expect(screen.getByText('Remove from Garden Plan')).toBeInTheDocument()
   })
 })
-
-//test render
-//test fetch
-//test button functionality
