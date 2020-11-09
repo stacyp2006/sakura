@@ -23,9 +23,9 @@ const Plan = ({ plan, removeFromPlan }) => {
     return (<p className='add-message'>Return to the Home page and add some plants to plan your garden.</p>)
   }
   return (
-    <section className='card-container'>
+    <div role='region' className='card-container'>
     {plantCards}
-    </section>
+    </div>
   )
 }
 
