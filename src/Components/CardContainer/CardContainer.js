@@ -1,5 +1,6 @@
 import React from 'react';
 import Card from '../Card/Card';
+import PropTypes from 'prop-types';
 import './CardContainer.css';
 
 const CardContainer = ({ plantList, removeFromPlan }) => {
@@ -25,3 +26,8 @@ const CardContainer = ({ plantList, removeFromPlan }) => {
 }
 
 export default CardContainer;
+
+CardContainer.propTypes = {
+  plantList: PropTypes.array,
+  removeFromPlan: PropTypes.func
+}
