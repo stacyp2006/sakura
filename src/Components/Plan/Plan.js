@@ -1,5 +1,6 @@
 import React from 'react';
 import Card from '../Card/Card';
+import PropTypes from 'prop-types';
 import './Plan.css';
 
 const Plan = ({ plan, removeFromPlan }) => {
@@ -29,3 +30,8 @@ const Plan = ({ plan, removeFromPlan }) => {
 }
 
 export default Plan;
+
+Plan.propTypes = {
+  plan: PropTypes.array,
+  removeFromPlan: PropTypes.func
+}
