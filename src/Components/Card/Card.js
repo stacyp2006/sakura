@@ -1,13 +1,8 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import './Card.css';
 
 const Card = (props) => {
-
-  const addPlant = (event) => {
-    let newPlant = {...props}
-    props.addToPlan(newPlant)
-  }
 
   const removePlant = (event) => {
     let id = props.id
@@ -23,7 +18,6 @@ const Card = (props) => {
             <h2 className='scientific-name'>{props.scientificName}</h2>
           </Link>
         </nav>
-        {!props.onPlan && <button className='add-button' type='button' onClick={addPlant}>Add to Garden Plan</button>}
         {props.onPlan && <button className='remove-button' type='button' onClick={removePlant}>Remove from Garden Plan</button>}
       </div>
   )
