@@ -32,6 +32,32 @@ describe('Plan', () => {
     expect(screen.getByRole('region')).toBeInTheDocument();
   })
 
+  it('should not display a card that has not been added to the plan', () => {
+    const fakePlantList = [
+      {
+        image: 'mock URL1',
+        commonName: 'Japanese cheesewood',
+        scientficName: 'Pittosporum tobira'
+      },
+      {
+        image: 'mock URL2',
+        commonName: 'Japanese raspberry',
+        scientficName: 'Rubus parvifolius'
+      }
+    ]
+    const fakeRemove = jest.fn()
+
+    render (
+      <BrowserRouter>
+      <Plan plan={fakePlantList}
+      removeFromPlan={fakeRemove}
+      />
+      </BrowserRouter>
+    )
+
+    expect(screen.queryByText('Saguaro Cactus')).not.toBeInTheDocument()
+  })
+
   it('should display a message if there are no plants in the plan', () => {
     const fakePlantList = []
     const fakeRemove = jest.fn()
@@ -47,7 +73,7 @@ describe('Plan', () => {
     expect(screen.getByText('Return to the Home page and add some plants to plan your garden.')).toBeInTheDocument()
   })
 
-  it('should remove a plant from the list on button click', () => {
+  it('should invoke the removeFromPlan method on button click', () => {
     const fakePlantList = [
       {
         id: 1234,
