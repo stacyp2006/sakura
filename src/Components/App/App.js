@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import CardContainer from '../CardContainer/CardContainer';
 import CardDetail from '../CardDetail/CardDetail';
-import { Route, Link, withRouter } from 'react-router-dom';
+import Plan from '../Plan/Plan';
+import { Route, Link } from 'react-router-dom';
 import { getPlants } from '../../apiCalls.js';
 import './App.css';
 
@@ -14,8 +15,17 @@ class App extends Component {
     }
   }
 
-  addToPlan = () => {
-    // this.setState({plan: ...state, plant})
+  addToPlan = (newPlant) => {
+    this.setState({plan: [...this.state.plan, newPlant]})
+  }
+
+  removeFromPlan = (id) => {
+    this.setState(state => {
+      const plan = state.plan.filter(item => item.id !== id);
+      return {
+        plan
+      }
+    })
   }
 
   componentDidMount = () => {
@@ -27,15 +37,25 @@ class App extends Component {
   render() {
     return (
       <main>
-        <h1 className='title'>Sakura</h1>
-        <Route exact path="/" render={() => <CardContainer plantList={this.state.plants}/>} />
+        <nav className='links'>
+          <h1 className='title'>Sakura</h1>
+          <Link to='/' className='homelink'>Home</Link> {' '} <Link to='/plan' className='planlink'>My Garden Plan</Link>
+        </nav>
+        <Route exact path='/'
+          render={() => <CardContainer plantList={this.state.plants}
+          />}
+        />
         <Route path='/plant/:id'
           render={({ match }) =>{
             const { id } = match.params;
             const plantToRender = this.state.plants.find(plant => plant.id === parseInt(id));
-            return <CardDetail {...plantToRender}/>
+            return <CardDetail addToPlan={this.addToPlan}
+            removeFromPlan={this.removeFromPlan} {...plantToRender}/>
           }}
         />
+        <Route path='/plan' render={() => <Plan plan={this.state.plan}
+        removeFromPlan={this.removeFromPlan}
+        />}/>
       </main>
     )
   }
