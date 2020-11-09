@@ -41,6 +41,7 @@ describe('App', () => {
   it('should render the plan page when the plan link is clicked', () => {
     getPlants.mockResolvedValueOnce([]);
     const mockPlan = []
+
     render(
       <BrowserRouter><App /><Plan plan={mockPlan}/></BrowserRouter>
     );
@@ -49,7 +50,18 @@ describe('App', () => {
     expect(screen.getAllByText('Return to the Home page and add some plants to plan your garden.'));
   });
 
-  
+  it('should return to the home view when the home link is clicked', () => {
+    getPlants.mockResolvedValueOnce([]);
+
+    render(
+      <BrowserRouter><App /></BrowserRouter>
+    );
+
+    userEvent.click(screen.getByText('Home'));
+    expect(screen.getByText('Choose a plant to start planning your garden!'))
+  })
+
+
 
   //test fetch for plant list
 })

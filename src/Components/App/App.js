@@ -46,6 +46,7 @@ class App extends Component {
           <h1 className='title'>Sakura</h1>
           <Link to='/' className='homelink'>Home</Link> {' '} <Link to='/plan' className='planlink'>My Garden Plan</Link>
         </nav>
+        <h2 className='greeting'>Choose a plant to start planning your garden!</h2>
         <Route exact path='/'
           render={() => <CardContainer plantList={this.state.plants}
           />}
