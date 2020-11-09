@@ -31,8 +31,8 @@ class App extends Component {
     })
   }
 
-  componentDidMount = () => {
-    getPlants()
+  componentDidMount = async () => {
+    await getPlants()
     .then(data => this.setState({plants: data.data}))
     .catch(error => console.log('fetch error'))
   }
