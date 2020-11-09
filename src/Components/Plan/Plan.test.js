@@ -109,5 +109,7 @@ describe('Plan', () => {
     userEvent.click(removes[0])
     expect(fakeRemove).toHaveBeenCalledWith(1234)
     expect(fakeRemove).toHaveBeenCalledTimes(1)
+
+    expect(screen.queryByRole('heading', { name: 'Japanese rose'})).toEqual(null);
   })
 })
