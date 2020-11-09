@@ -5,11 +5,11 @@ import './Plan.css';
 const Plan = ({ plan, removeFromPlan }) => {
   let plantCards;
   if(plan.length !== 0) {
-    plantCards = plan.map(plant => {
+    plantCards = plan.map((plant, index) => {
       return (
         <Card
           id={plant.id}
-          key={plant.id}
+          key={index}
           commonName={plant.commonName}
           scientificName={plant.scientificName}
           image={plant.image}
