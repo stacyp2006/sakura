@@ -41,7 +41,7 @@ class App extends Component {
           render={({ match }) =>{
             const { id } = match.params;
             const plantToRender = this.state.plants.find(plant => plant.id === parseInt(id));
-            return <CardDetail {...plantToRender}/>
+            return <CardDetail addToPlan={this.addToPlan} {...plantToRender}/>
           }}
         />
         <Route path='/plan' render={() => <Plan plan={this.state.plan}/>}/>

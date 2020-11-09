@@ -18,7 +18,16 @@ class CardDetail extends Component {
     .catch(error => console.log('single plant fetch error'))
   }
 
-//add onClick method for button
+  addPlant = (event) => {
+    let newPlant = {
+      id: this.props.id,
+      key: this.props.id,
+      commonName: this.props.common_name,
+      scientificName: this.props.scientific_name,
+      image: this.props.image_url
+    }
+    this.props.addToPlan(newPlant)
+  }
 
   render() {
     return (
@@ -35,8 +44,8 @@ class CardDetail extends Component {
           target='_blank'>
           Learn More
           </a>
-          <button className='add-button' type='button'>Add to Garden Plan</button>
-          <button className='remove-button' type='button'>Remove from Garden Plan</button>
+          {!this.props.onPlan && <button className='add-button' type='button' onClick={this.addPlant}>Add to Garden Plan</button>}
+          {this.props.onPlan && <button className='remove-button' type='button'>Remove from Garden Plan</button>}
         </section>
         <img className='photo' src={this.props.image_url} alt= {this.props.common_name}/>
       </main>
