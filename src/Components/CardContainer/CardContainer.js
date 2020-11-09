@@ -19,9 +19,9 @@ const CardContainer = ({ plantList, removeFromPlan }) => {
     })
   }
   return (
-    <section className='card-container'>
+    <div role='region' className='card-container'>
     {plantCards}
-    </section>
+    </div>
   )
 }
 
