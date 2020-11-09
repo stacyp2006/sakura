@@ -30,6 +30,8 @@ describe('Plan', () => {
     )
 
     expect(screen.getByRole('region')).toBeInTheDocument();
+    expect(screen.getByText('Japanese cheesewood')).toBeInTheDocument();
+    expect(screen.getByText('Japanese raspberry')).toBeInTheDocument();
   })
 
   it('should not display a card that has not been added to the plan', () => {
