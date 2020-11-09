@@ -1,4 +1,5 @@
 import React from 'react';
+import Card from '../Card/Card';
 import './Plan.css';
 
 const Plan = ({ plan }) => {
@@ -9,12 +10,15 @@ const Plan = ({ plan }) => {
         <Card
           id={plant.id}
           key={plant.id}
-          commonName={plant.common_name}
-          scientificName={plant.scientific_name}
-          image={plant.image_url}
+          commonName={plant.commonName}
+          scientificName={plant.scientificName}
+          image={plant.image}
+          onPlan={true}
         />
       )
     })
+  } else {
+    return (<p className='add-message'>Return to the Home page and add some plants to plan your garden.</p>)
   }
   return (
     <section className='card-container'>
