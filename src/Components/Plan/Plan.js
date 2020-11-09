@@ -2,7 +2,7 @@ import React from 'react';
 import Card from '../Card/Card';
 import './Plan.css';
 
-const Plan = ({ plan }) => {
+const Plan = ({ plan, removeFromPlan }) => {
   let plantCards;
   if(plan.length !== 0) {
     plantCards = plan.map(plant => {
@@ -14,6 +14,7 @@ const Plan = ({ plan }) => {
           scientificName={plant.scientificName}
           image={plant.image}
           onPlan={true}
+          removeFromPlan={removeFromPlan}
         />
       )
     })

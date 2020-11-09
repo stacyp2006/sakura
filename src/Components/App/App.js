@@ -19,8 +19,13 @@ class App extends Component {
     this.setState({plan: [...this.state.plan, newPlant]})
   }
 
-  removeFromPlan = () =>{
-
+  removeFromPlan = (id) => {
+    this.setState(state => {
+      const plan = state.plan.filter(item => item.id !== id);
+      return {
+        plan
+      }
+    })
   }
 
   componentDidMount = () => {
@@ -36,7 +41,11 @@ class App extends Component {
           <h1 className='title'>Sakura</h1>
           <Link to='/' className='homelink'>Home</Link> {' '} <Link to='/plan' className='planlink'>My Garden Plan</Link>
         </nav>
-        <Route exact path='/' render={() => <CardContainer plantList={this.state.plants} addToPlan={this.addToPlan}/>} />
+        <Route exact path='/'
+          render={() => <CardContainer plantList={this.state.plants}
+          addToPlan={this.addToPlan}
+          />}
+        />
         <Route path='/plant/:id'
           render={({ match }) =>{
             const { id } = match.params;
@@ -44,7 +53,9 @@ class App extends Component {
             return <CardDetail addToPlan={this.addToPlan} {...plantToRender}/>
           }}
         />
-        <Route path='/plan' render={() => <Plan plan={this.state.plan}/>}/>
+        <Route path='/plan' render={() => <Plan plan={this.state.plan}
+        removeFromPlan={this.removeFromPlan}
+        />}/>
       </main>
     )
   }

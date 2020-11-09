@@ -9,9 +9,10 @@ const Card = (props) => {
     props.addToPlan(newPlant)
   }
 
-  // const removePlant = (event) => {
-  //
-  // }
+  const removePlant = (event) => {
+    let id = props.id
+    props.removeFromPlan(id)
+  }
 
   return (
       <div id={props.id} className='plant-card'>
@@ -23,7 +24,7 @@ const Card = (props) => {
           </Link>
         </nav>
         {!props.onPlan && <button className='add-button' type='button' onClick={addPlant}>Add to Garden Plan</button>}
-        {props.onPlan && <button className='remove-button' type='button'>Remove from Garden Plan</button>}
+        {props.onPlan && <button className='remove-button' type='button' onClick={removePlant}>Remove from Garden Plan</button>}
       </div>
   )
 }

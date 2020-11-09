@@ -2,7 +2,7 @@ import React from 'react';
 import Card from '../Card/Card';
 import './CardContainer.css';
 
-const CardContainer = ({ plantList, addToPlan }) => {
+const CardContainer = ({ plantList, addToPlan, removeFromPlan }) => {
   let plantCards;
   if(plantList.length !== 0) {
     plantCards = plantList.map(plant => {
