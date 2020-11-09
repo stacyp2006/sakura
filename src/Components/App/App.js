@@ -16,7 +16,10 @@ class App extends Component {
   }
 
   addToPlan = (newPlant) => {
-    this.setState({plan: [...this.state.plan, newPlant]})
+    const foundPlant = this.state.plan.find(plant => plant.commonName === newPlant.commonName)
+    if(!foundPlant) {
+      this.setState({plan: [...this.state.plan, newPlant]})
+    }
   }
 
   removeFromPlan = (id) => {

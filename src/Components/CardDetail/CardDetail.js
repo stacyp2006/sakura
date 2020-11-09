@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { getSinglePlant } from '../../apiCalls.js';
 import './CardDetail.css';
 
@@ -48,7 +49,8 @@ class CardDetail extends Component {
           <a
           className='plant-link'
           href={this.state.plantInfo.url}
-          target='_blank'>
+          target='_blank'
+          rel="noreferrer">
           Learn More
           </a>
           {!this.state.onPlan && <button className='add-button' type='button' onClick={this.addPlant}>Add to Garden Plan</button>}
@@ -61,3 +63,12 @@ class CardDetail extends Component {
 }
 
 export default CardDetail;
+
+CardDetail.propTypes = {
+  id: PropTypes.number,
+  common_name: PropTypes.string,
+  image_url: PropTypes.string,
+  scientific_name: PropTypes.string,
+  addToPlan: PropTypes.func,
+  removeFromPlan: PropTypes.func
+}
