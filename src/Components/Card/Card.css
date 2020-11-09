@@ -3,7 +3,13 @@
   width: 100%;
   border-radius: 20px;
 }
+.card-link {
+  text-decoration: none;
+}
 
+.common-name, .scientific-name {
+  color: #000000;
+}
 .scientific-name {
   font-style: italic;
 }
