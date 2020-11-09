@@ -41,9 +41,9 @@ class CardDetail extends Component {
     return (
       <main className='plant-detail'>
         <section className='plant-info'>
-          <h1 className='common-name'>{this.props.common_name}</h1>
-          <h2 className='scientific-name'>{this.props.scientific_name}</h2>
-          <h2>Plant Type: {this.state.plantType.growth_habit}</h2>
+          <h1 className='common-name-detail'>{this.props.common_name}</h1>
+          <h2 className='scientific-name-detail'>{this.props.scientific_name}</h2>
+          <h2 className='plant-type'>Plant Type: {this.state.plantType.growth_habit}</h2>
           {this.state.height.cm  !== null &&
           <h2>Height: {this.state.height.cm}cm</h2>}
           <a
@@ -53,6 +53,7 @@ class CardDetail extends Component {
           rel="noreferrer">
           Learn More
           </a>
+          <br></br>
           {!this.state.onPlan && <button className='add-button' type='button' onClick={this.addPlant}>Add to Garden Plan</button>}
           {this.state.onPlan && <button className='remove-button' type='button' onClick={this.removePlant}>Remove from Garden Plan</button>}
         </section>

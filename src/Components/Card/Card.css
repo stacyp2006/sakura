@@ -8,6 +8,7 @@
 }
 
 .common-name, .scientific-name {
+  font-size: 25px;
   color: #000000;
 }
 .scientific-name {
