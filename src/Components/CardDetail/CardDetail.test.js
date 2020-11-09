@@ -62,7 +62,42 @@ describe('CardDetail', () => {
     expect(screen.getByText('Kerria japonica')).toBeInTheDocument();
     expect(await waitFor( () => screen.getByText('Plant Type: Shrub'))).toBeInTheDocument()
     expect(await waitFor( () => screen.getByText('Height: 250cm'))).toBeInTheDocument()
+  })
 
+  it('should invoke the addToPlan function on button click', () => {
+    getSinglePlant.mockResolvedValue({
+      data: {
+        specifications: {
+          growth_habit: 'Shrub',
+          average_height: {
+            cm: 250
+          }
+        },
+        sources: [{
+          url: "https://plants.usda.gov/core/profile?symbol=PITO2"
+        }],
+      }
+    })
+
+    const mockNewPlant = {
+      id: 123456,
+      key: 123456,
+      commonName: 'Japanese rose',
+      scientificName: 'Kerria japonica'
+    }
+
+    render(
+      <BrowserRouter>
+        <CardDetail addToPlan={fakeAdd}
+        removeFromPlan={fakeRemove} {...plantToRender}/>
+      </BrowserRouter>
+    )
+
+    const addTo = screen.getByText('Add to Garden Plan')
+    userEvent.click(addTo)
+    expect(fakeAdd).toHaveBeenCalledWith(mockNewPlant);
+    expect(fakeAdd).toHaveBeenCalledTimes(1);
+    expect(screen.getByText('Remove from Garden Plan')).toBeInTheDocument()
   })
 })
 
