@@ -8,7 +8,7 @@ class CardDetail extends Component {
     this.state = {
       plantType: {},
       plantInfo: [],
-      height: {}
+      height: {},
     }
   }
 
@@ -26,7 +26,14 @@ class CardDetail extends Component {
       scientificName: this.props.scientific_name,
       image: this.props.image_url
     }
+    this.setState({onPlan: true})
     this.props.addToPlan(newPlant)
+  }
+
+  removePlant = (event) => {
+    this.setState({onPlan: false})
+    let id = this.props.id
+    this.props.removeFromPlan(id)
   }
 
   render() {
@@ -44,8 +51,8 @@ class CardDetail extends Component {
           target='_blank'>
           Learn More
           </a>
-          {!this.props.onPlan && <button className='add-button' type='button' onClick={this.addPlant}>Add to Garden Plan</button>}
-          {this.props.onPlan && <button className='remove-button' type='button'>Remove from Garden Plan</button>}
+          {!this.state.onPlan && <button className='add-button' type='button' onClick={this.addPlant}>Add to Garden Plan</button>}
+          {this.state.onPlan && <button className='remove-button' type='button' onClick={this.removePlant}>Remove from Garden Plan</button>}
         </section>
         <img className='photo' src={this.props.image_url} alt= {this.props.common_name}/>
       </main>
