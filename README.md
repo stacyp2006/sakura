@@ -1,70 +1,55 @@
-# Getting Started with Create React App
+# Sakura
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Project Description
 
-## Available Scripts
+Sakura is a 5 day solo development project completed during Module 3 of the Front-End Engineering Program at Turing School of Software and Design. For the purposes of this project, the user is a gardener who wants to plant a Japanese style garden. Project goals included demonstrating mastery with React, React Router and Asynchronous JavaScript.
 
-In the project directory, you can run:
+## Install
 
-### `npm start`
+- Clone down this repo
+- Install dependencies via `npm install`
+- Run `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Technologies Used
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- React
+- React Router
+- JavaScript
+- Jest
+- CSS/HTML
+- Babel
+- API used was [Trefle](https://trefle.io/)
 
-### `npm test`
+## Accomplishments
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Testing: This is probably the most robust test suite I've written thus far in my development career. All my tests are currently passing. I have also successfully implemented PropTypes.
 
-### `npm run build`
+- React: As I continue to work with React, my understanding and ease of use improve. I was more thoughtful on this project, having learned lessons regarding design and accessibility on previous projects.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Challenges
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- Testing: I'm still working on improving my async testing. While these tests are passing, my `.catch` errors are logging in the terminal. I suspect I may not be mocking my returned data accurately.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- State: After using Redux on my last project, there were times that I wished I had used it on this project. While it is a small application that likely doesn't really need Redux, that indicates to me that I may still have some growth to do in architecting my components and/or managing state.
 
-### `npm run eject`
+## Future Enhancements
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- See the Issues tab on this repo for future changes to the application.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Images
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+- HomePage
+![HomePage](/images/Sakurahome.png)
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+- Plant Detail
+![Plant Detail](/images/Sakuradetail.png)
 
-## Learn More
+- Garden Plan
+![Garden Plan](/images/Sakuraplan.png)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- Wireframe
+![Wireframe](/images/Sakurawf.png)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Developer
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- [Stacy Potten](https://github.com/stacyp2006)
