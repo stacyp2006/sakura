@@ -1,7 +1,8 @@
 import React from 'react';
 import App from './App';
 import Plan from '../Plan/Plan';
-import { render, screen } from '@testing-library/react';
+import CardContainer from '../CardContainer/CardContainer';
+import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import '@testing-library/jest-dom';
 import { BrowserRouter } from 'react-router-dom';
@@ -61,7 +62,36 @@ describe('App', () => {
     expect(screen.getByText('Choose a plant to start planning your garden!'))
   })
 
+  it('should render plant cards', async () => {
+    getPlants.mockResolvedValue({
+      data: [
+        {
+          common_name: 'Japanese rose',
+          scientific_name: 'sciency science',
+          image_url: 'mockURL'
+        },
+        {
+          common_name: 'Japanese plum',
+          scientific_name: 'sciency',
+          image_url: 'mockURL2'
+        }
+      ]
+    });
 
+    const mockList = [];
 
-  //test fetch for plant list
+    render(
+      <BrowserRouter>
+        <App />
+          <CardContainer plantList={mockList} />
+      </BrowserRouter>
+    );
+
+    expect(await waitFor( () => screen.getByText('Japanese rose'))).toBeInTheDocument();
+    expect(await waitFor( () => screen.getByText('sciency science'))).toBeInTheDocument();
+    expect(await waitFor( () => screen.getByText('Japanese plum'))).toBeInTheDocument();
+    expect(await waitFor( () => screen.getByText('sciency'))).toBeInTheDocument();
+    const images = await waitFor(() => screen.getAllByTestId('plant-photo'))
+    expect(images).toHaveLength(2)
+  })
 })

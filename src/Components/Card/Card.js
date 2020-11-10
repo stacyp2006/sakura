@@ -14,7 +14,7 @@ const Card = (props) => {
       <div id={props.id} className='plant-card'>
         <nav className='card-info'>
           <Link to={'/plant/' + props.id} className='card-link'>
-            <img className='plant-photo' src={props.image} alt= {props.commonName}/>
+            <img data-testid='plant-photo' className='plant-photo' src={props.image} alt= {props.commonName}/>
             <h2 role='heading' className='common-name'>{props.commonName}</h2>
             <h2 className='scientific-name'>{props.scientificName}</h2>
           </Link>
