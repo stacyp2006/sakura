@@ -13,6 +13,7 @@ Sakura is a 5 day solo development project completed during Module 3 of the Fron
 - Follow instructions below to get an api token
 - In the `apiCalls.js` file, remove the interpolated variable `${API_KEY}` from `getPlants` and `getSinglePlant` and insert your token
 - Run `npm start`
+- Tests can be run/viewed via `npm test`
 
 #### Get an API token
 
