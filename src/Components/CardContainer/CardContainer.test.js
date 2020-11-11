@@ -3,7 +3,7 @@ import CardContainer from './CardContainer';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import '@testing-library/jest-dom';
-import { BrowserRouter } from 'react-router-dom';
+import { MemoryRouter } from 'react-router-dom';
 
 describe('CardContainer', () => {
   it('should render a plant card container', () => {
@@ -21,10 +21,10 @@ describe('CardContainer', () => {
     ]
 
     render (
-      <BrowserRouter>
+      <MemoryRouter>
         <CardContainer plantList={fakePlantList}
         />
-      </BrowserRouter>
+      </MemoryRouter>
     )
 
     expect(screen.getByRole('region')).toBeInTheDocument();

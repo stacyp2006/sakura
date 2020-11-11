@@ -3,7 +3,7 @@ import CardDetail from './CardDetail';
 import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import '@testing-library/jest-dom';
-import { BrowserRouter } from 'react-router-dom';
+import { MemoryRouter } from 'react-router-dom';
 import { getSinglePlant } from '../../apiCalls.js'
 jest.mock('../../apiCalls.js');
 
@@ -25,10 +25,10 @@ describe('CardDetail', () => {
     getSinglePlant.mockResolvedValue({})
 
     render(
-      <BrowserRouter>
+      <MemoryRouter>
         <CardDetail addToPlan={fakeAdd}
         removeFromPlan={fakeRemove} {...plantToRender}/>
-      </BrowserRouter>
+      </MemoryRouter>
     )
 
     expect(screen.getByRole('main')).toBeInTheDocument();
@@ -52,10 +52,10 @@ describe('CardDetail', () => {
     })
 
     render(
-      <BrowserRouter>
+      <MemoryRouter>
         <CardDetail addToPlan={fakeAdd}
         removeFromPlan={fakeRemove} {...plantToRender}/>
-      </BrowserRouter>
+      </MemoryRouter>
     )
 
     expect(screen.getByText('Japanese rose')).toBeInTheDocument();
@@ -87,10 +87,10 @@ describe('CardDetail', () => {
     }
 
     render(
-      <BrowserRouter>
+      <MemoryRouter>
         <CardDetail addToPlan={fakeAdd}
         removeFromPlan={fakeRemove} {...plantToRender}/>
-      </BrowserRouter>
+      </MemoryRouter>
     )
 
     const addTo = screen.getByText('Add to Garden Plan')

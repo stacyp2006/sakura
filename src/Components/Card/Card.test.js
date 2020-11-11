@@ -2,7 +2,7 @@ import React from 'react';
 import Card from './Card';
 import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
-import { BrowserRouter } from 'react-router-dom';
+import { MemoryRouter } from 'react-router-dom';
 
 describe('Card', () => {
   it('should render a plant card', () => {
@@ -13,7 +13,7 @@ describe('Card', () => {
     }
 
     render(
-      <BrowserRouter>
+      <MemoryRouter>
         <Card
           id={12345}
           key={1}
@@ -21,7 +21,7 @@ describe('Card', () => {
           scientificName={mockCard.scientficName}
           image={mockCard.image}
         />
-      </BrowserRouter>
+      </MemoryRouter>
     )
 
     expect(screen.getByText('Japanese cheesewood')).toBeInTheDocument()
