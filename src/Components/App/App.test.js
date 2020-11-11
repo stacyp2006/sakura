@@ -5,7 +5,7 @@ import CardContainer from '../CardContainer/CardContainer';
 import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import '@testing-library/jest-dom';
-import { BrowserRouter } from 'react-router-dom';
+import { MemoryRouter } from 'react-router-dom';
 import { getPlants } from '../../apiCalls.js'
 jest.mock('../../apiCalls.js');
 
@@ -16,9 +16,9 @@ describe('App', () => {
     const mockTitle = 'Sakura'
 
     render(
-      <BrowserRouter>
+      <MemoryRouter>
         <App />
-      </BrowserRouter>
+      </MemoryRouter>
     )
 
     expect(screen.getByText('Sakura')).toBeInTheDocument();
@@ -30,9 +30,9 @@ describe('App', () => {
     const mockPlanLink = 'My Garden Plan'
 
     render(
-      <BrowserRouter>
+      <MemoryRouter>
         <App />
-      </BrowserRouter>
+      </MemoryRouter>
     )
 
     expect(screen.getByText('Home')).toBeInTheDocument()
@@ -44,7 +44,7 @@ describe('App', () => {
     const mockPlan = []
 
     render(
-      <BrowserRouter><App /><Plan plan={mockPlan}/></BrowserRouter>
+      <MemoryRouter><App /><Plan plan={mockPlan}/></MemoryRouter>
     );
 
     userEvent.click(screen.getByText('My Garden Plan'));
@@ -55,7 +55,7 @@ describe('App', () => {
     getPlants.mockResolvedValueOnce([]);
 
     render(
-      <BrowserRouter><App /></BrowserRouter>
+      <MemoryRouter><App /></MemoryRouter>
     );
 
     userEvent.click(screen.getByText('Home'));
@@ -81,10 +81,10 @@ describe('App', () => {
     const mockList = [];
 
     render(
-      <BrowserRouter>
+      <MemoryRouter>
         <App />
           <CardContainer plantList={mockList} />
-      </BrowserRouter>
+      </MemoryRouter>
     );
 
     expect(await waitFor( () => screen.getByText('Japanese rose'))).toBeInTheDocument();

@@ -10,6 +10,7 @@ class CardDetail extends Component {
       plantType: {},
       plantInfo: [],
       height: {},
+      onPlan: false
     }
   }
 
