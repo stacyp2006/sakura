@@ -4,11 +4,22 @@
 
 Sakura is a 5 day solo development project completed during Module 3 of the Front-End Engineering Program at Turing School of Software and Design. For the purposes of this project, the user is a gardener who wants to plant a Japanese style garden. Project goals included demonstrating mastery with React, React Router and Asynchronous JavaScript.
 
-## Install
+## Set Up and Install
+
+#### Set Up
 
 - Clone down this repo
 - Install dependencies via `npm install`
+- Follow instructions below to get an api token
+- In the `apiCalls.js` file, remove the interpolated variable `${API_KEY}` from `getPlants` and `getSinglePlant` and insert your token
 - Run `npm start`
+
+#### Get an API token
+
+- Create an account on [trefle.io](https://trefle.io/)
+- Confirm your email address
+- Login to your account
+- Grab your Trefle access token
 
 ## Technologies Used
 
