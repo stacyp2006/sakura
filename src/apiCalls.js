@@ -6,7 +6,12 @@ export const getPlants = () => {
       "Target-URL":`https://trefle.io/api/v1/plants/search?q=japanese&token=${API_KEY}&filter_not[growth_habit]=null`
     }
   })
-  .then(response => response.json())
+  .then(response => {
+    if(!response.ok) {
+      throw Error("failed to retrieve books")
+    }
+    return response.json()
+  })
 }
 
 export const getSinglePlant = async (plantID) => {
